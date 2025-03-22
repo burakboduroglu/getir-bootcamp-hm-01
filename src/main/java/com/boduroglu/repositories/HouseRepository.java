@@ -1,6 +1,7 @@
 package com.boduroglu.repositories;
 
 import com.boduroglu.models.Apartment;
+import com.boduroglu.models.House;
 import com.boduroglu.models.SummerHouse;
 import com.boduroglu.models.Villa;
 
@@ -31,6 +32,13 @@ public class HouseRepository {
         summerHouses.add(new SummerHouse("SummerHouse 3", 180000, 140, 2, 1));
     }
 
+    public List<House> getHouseList() {
+        List<House> houses = new ArrayList<>();
+        houses.addAll(apartments);
+        houses.addAll(villas);
+        houses.addAll(summerHouses);
+        return houses;
+    }
     public List<Apartment> getApartmentList() { return apartments; }
     public List<Villa> getVillaList() { return villas; }
     public List<SummerHouse> getSummerHouseList() { return summerHouses; }
